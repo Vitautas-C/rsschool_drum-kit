@@ -1,0 +1,1 @@
+# rsschool_drum-kit
