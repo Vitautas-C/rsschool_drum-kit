@@ -1,0 +1,200 @@
+@font-face {
+    font-family: "Lato";
+    src: url(/fonts/Lato/Lato-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100vh;
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    margin: 0 auto;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+@keyframes fade {
+    from {
+        opacity: .3
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* Piano styles start */
+
+.piano {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.piano__title {
+    text-align: left;
+    font-size: 26px;
+    text-shadow: #3f87a6 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+
+.piano__title-key {
+    color: #f69d3c;
+    opacity: 0;
+    animation-name: fade;
+    animation-duration: 2.0s;
+}
+
+.piano__key {
+    display: flex;
+    background-color: brown;
+    background-image: url(/img/background/wood-texture.jpg);
+    padding: 10px 10px 20px 10px;
+}
+
+.piano__key-white {
+    width: 70px;
+    height: 45vh;
+    background-color: white;
+    background-image: url(/img/background/white-texture.jpg);
+    background-size: 50%;
+    margin: 1px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.piano__key-black {
+    width: 45px;
+    height: 30vh;
+    transform: translateX(-50%);
+    background-color: black;
+    background-image: url(/img/background/black-texture.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.piano__key-white:hover,
+.piano__key-black:hover {
+    cursor: pointer;
+}
+
+.key {
+    box-shadow: 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    transition: all .07s ease;
+}
+
+.active {
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .25), inset 0 2px 0 rgba(255, 255, 255, .6), 0 2px 0 rgba(0, 0, 0, .1), inset 0 0 20px rgba(0, 0, 0, .1);
+}
+
+
+/* Piano styles end */
+
+.funny {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.funny-geese {
+    width: 290px;
+    height: 240px;
+    background: #3f87a6;
+    background-image: url(/img/background/funny-geese.jpg);
+    background-size: cover;
+    background-position: right 10% top 10%;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.funny-geese__button,
+.funny-geese__prompt {
+    width: 160px;
+    height: 38px;
+    background: #f69d3c;
+    margin-top: 15px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 38px;
+    text-align: center;
+    color: #F2F2F2;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 5px;
+}
+
+.funny-geese__prompt {
+    width: 175px;
+}
+
+.funny-geese__button:hover,
+.funny-geese__prompt:hover {
+    cursor: pointer;
+}
+
+.funny-geese__button:hover {
+    box-shadow: 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+
+.visibility {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    /* Piano styles start */
+    .piano__title {
+        text-align: left;
+        font-size: 15px;
+    }
+    .piano__key-white {
+        width: 40px;
+        height: 35vh;
+    }
+    .piano__key-black {
+        width: 27px;
+        height: 23vh;
+    }
+    /* Piano styles end */
+    .funny-geese {
+        width: 200px;
+        height: 160px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 10px;
+    }
+    .funny-geese__button,
+    .funny-geese__prompt {
+        width: 100px;
+        height: 30px;
+        margin-top: 5px;
+        font-size: 15px;
+        line-height: 30px;
+    }
+    .funny-geese__prompt {
+        width: 110px;
+    }
+}
